@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MeriLife Unified Login</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <style>
+        :root {
+            --brand-primary: #0b6b3a;
+            --brand-dark: #10241a;
+            --brand-light: #f2fbf6;
+            --brand-accent: #ffc145;
+            --brand-muted: #c9e8d6;
+        }
+
+        body {
+            font-family: "Poppins", "Segoe UI", system-ui, sans-serif;
+            background: radial-gradient(circle at top left, rgba(11, 107, 58, 0.95), rgba(16, 36, 26, 0.98));
+            color: var(--brand-dark);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2.5rem 1rem;
+        }
+
+        .glass-shell {
+            max-width: 1100px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.12);
+            border-radius: 2.5rem;
+            padding: 2px;
+            box-shadow: 0 40px 80px -40px rgba(9, 24, 66, 0.6);
+            backdrop-filter: blur(20px);
+        }
+
+        .auth-layout {
+            background: #ffffff;
+            border-radius: 2.4rem;
+            overflow: hidden;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .auth-hero {
+            position: relative;
+            flex: 1 1 320px;
+            min-height: 560px;
+            padding: 3rem 2.75rem;
+            background: linear-gradient(165deg, rgba(11, 107, 58, 0.92), rgba(9, 61, 36, 0.96));
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 1.75rem;
+            overflow: hidden;
+        }
+
+        .auth-hero::before,
+        .auth-hero::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.12);
+            filter: blur(0);
+            z-index: 0;
+        }
+
+        .auth-hero::before {
+            width: 320px;
+            height: 320px;
+            bottom: -120px;
+            left: -60px;
+        }
+
+        .auth-hero::after {
+            width: 220px;
+            height: 220px;
+            top: 40px;
+            right: -80px;
+            background: rgba(201, 232, 214, 0.28);
+        }
+
+        .auth-hero h1 {
+            font-weight: 700;
+            font-size: clamp(2.1rem, 3vw, 2.6rem);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            z-index: 1;
+        }
+
+        .auth-hero p,
+        .auth-hero .tagline {
+            z-index: 1;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 320px;
+        }
+
+        .auth-hero .tagline {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .auth-hero .tagline::before {
+            content: "";
+            display: inline-block;
+            width: 42px;
+            height: 3px;
+            border-radius: 999px;
+            background: rgba(255, 193, 69, 0.8);
+        }
+
+        .auth-hero .highlight-card {
+            z-index: 1;
+            backdrop-filter: blur(12px);
+            background: rgba(16, 36, 26, 0.35);
+            border-radius: 1.5rem;
+            padding: 1.25rem 1.5rem;
+            border: 1px solid rgba(201, 232, 214, 0.35);
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .auth-hero .highlight-card span {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            color: rgba(255, 255, 255, 0.65);
+        }
+
+        .auth-hero .highlight-card strong {
+            font-size: 1.1rem;
+        }
+
+        .auth-panel {
+            flex: 1 1 420px;
+            padding: clamp(1.75rem, 1.5rem + 1vw, 2.75rem) clamp(1.5rem, 1rem + 1.5vw, 3rem);
+            background: linear-gradient(180deg, #ffffff 70%, #eff3ff 100%);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .auth-panel header {
+            margin-bottom: 1.5rem;
+        }
+
+        .auth-panel header h2 {
+            font-weight: 700;
+            font-size: 1.9rem;
+            color: var(--brand-dark);
+        }
+
+        .auth-panel header p {
+            margin: 0.35rem 0 0;
+            color: rgba(18, 32, 67, 0.7);
+        }
+
+        .nav-pills {
+            gap: 0.6rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.75rem;
+        }
+
+        .nav-pills .nav-link {
+            border-radius: 999px;
+            padding: 0.55rem 1.1rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: rgba(16, 36, 26, 0.7);
+            background: rgba(201, 232, 214, 0.35);
+            border: 1px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .nav-pills .nav-link.active,
+        .nav-pills .nav-link:hover,
+        .nav-pills .nav-link:focus-visible {
+            color: #ffffff;
+            background: var(--brand-primary);
+            border-color: rgba(11, 107, 58, 0.45);
+            box-shadow: 0 10px 30px -18px rgba(11, 107, 58, 0.9);
+        }
+
+        .tab-content {
+            flex: 1;
+            display: flex;
+        }
+
+        .tab-pane {
+            width: 100%;
+        }
+
+        .login-card {
+            background: #ffffff;
+            border-radius: 1.5rem;
+            padding: 1.75rem;
+            border: 1px solid rgba(200, 213, 244, 0.8);
+            box-shadow: 0 24px 45px -35px rgba(8, 29, 87, 0.45);
+        }
+
+        .login-card h3 {
+            font-weight: 700;
+            font-size: 1.4rem;
+            color: var(--brand-dark);
+        }
+
+        .login-card p {
+            color: rgba(18, 32, 67, 0.6);
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: rgba(18, 32, 67, 0.8);
+        }
+
+        .form-control {
+            border-radius: 0.9rem;
+            border: 1.5px solid rgba(16, 36, 26, 0.12);
+            padding: 0.75rem 1rem;
+            transition: all 0.2s ease;
+            background-color: var(--brand-light);
+        }
+
+        .form-control:focus {
+            border-color: var(--brand-primary);
+            box-shadow: 0 0 0 0.35rem rgba(11, 107, 58, 0.18);
+            background-color: #ffffff;
+        }
+
+        .btn-brand {
+            border-radius: 0.9rem;
+            font-weight: 600;
+            padding: 0.75rem 1.25rem;
+            background: var(--brand-primary);
+            border-color: var(--brand-primary);
+            color: #fff;
+        }
+
+        .btn-brand:hover,
+        .btn-brand:focus-visible {
+            background: var(--brand-dark);
+            border-color: var(--brand-dark);
+        }
+
+        .btn-outline {
+            border-radius: 0.9rem;
+            font-weight: 600;
+            padding: 0.75rem 1.25rem;
+            border: 1.5px solid rgba(16, 36, 26, 0.2);
+            color: rgba(16, 36, 26, 0.8);
+            background: transparent;
+        }
+
+        .btn-outline:hover,
+        .login-card a:hover {
+            text-decoration: underline;
+        }
+
+        .form-text-links {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.875rem;
+            color: rgba(18, 32, 67, 0.65);
+            margin-bottom: 1.25rem;
+        }
+
+        .form-text-links a {
+            font-weight: 600;
+            color: var(--brand-primary);
+            text-decoration: none;
+        }
+
+        .footer-note {
+            margin-top: 1.5rem;
+            font-size: 0.85rem;
+            text-align: center;
+            color: rgba(16, 36, 26, 0.55);
+        }
+
+        @media (max-width: 992px) {
+            .auth-hero {
+                min-height: 320px;
+                padding: 2.5rem 2rem;
+            }
+
+            .auth-panel {
+                padding: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1.5rem 0.75rem;
+            }
+
+            .auth-hero {
+                border-radius: 2.4rem 2.4rem 0 0;
+                min-height: 300px;
+                text-align: center;
+                align-items: center;
+            }
+
+            .auth-hero .tagline::before {
+                display: none;
+            }
+
+            .auth-hero .highlight-card {
+                align-items: center;
+            }
+
+            .auth-panel {
+                border-radius: 0 0 2.4rem 2.4rem;
+            }
+
+            .nav-pills {
+                justify-content: center;
+            }
+
+            .form-text-links {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="glass-shell">
+        <div class="auth-layout">
+            <aside class="auth-hero">
+                <div class="logo-wrapper"
+                    style="width: 180px; background-color: #fff; border-radius: 12px; padding: 12px;">
+                    <img src="./images/Life-logo.png" height="70" alt="MeriLife Logo">
+                </div>
+
+                <div class="tagline">MeriLife Ecosystem</div>
+                <h1>Welcome</h1>
+                <p>
+                    A unified gateway for ministries, individuals, and partner organisations working
+                    together on climate-positive impact across India and the globe.
+                </p>
+                <div class="highlight-card">
+                    <span>One credential · six workspaces</span>
+                    <strong>Securely access dashboards, pledges, and collaborations tailored to you.</strong>
+                </div>
+            </aside>
+
+            <section class="auth-panel">
+                <header>
+                    <h2>Login Portal</h2>
+                    <p>Choose the appropriate portal tab and enter your verified credentials.</p>
+                </header>
+
+                <ul class="nav nav-pills" id="loginTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="central-tab" data-bs-toggle="pill" data-bs-target="#central"
+                            type="button" role="tab" aria-controls="central" aria-selected="true">
+                            Central/State Ministry/Departments
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="field-tab" data-bs-toggle="pill" data-bs-target="#field"
+                            type="button" role="tab" aria-controls="field" aria-selected="false">
+                            Field Offices
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="individuals-tab" data-bs-toggle="pill"
+                            data-bs-target="#individuals" type="button" role="tab" aria-controls="individuals"
+                            aria-selected="false">
+                            Individuals
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="stakeholders-tab" data-bs-toggle="pill"
+                            data-bs-target="#stakeholders" type="button" role="tab" aria-controls="stakeholders"
+                            aria-selected="false">
+                            Other Stakeholders
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="international-tab" data-bs-toggle="pill"
+                            data-bs-target="#international" type="button" role="tab" aria-controls="international"
+                            aria-selected="false">
+                            International Login
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="moefcc-tab" data-bs-toggle="pill" data-bs-target="#moefcc"
+                            type="button" role="tab" aria-controls="moefcc" aria-selected="false">
+                            MoEFCC User Login
+                        </button>
+                    </li>
+                </ul>
+
+                <div class="tab-content" id="loginTabContent">
+                    <div class="tab-pane fade show active" id="central" role="tabpanel" aria-labelledby="central-tab">
+                        <div class="login-card">
+                            <h3>Ministry Access</h3>
+                            <p>Use your government-issued email and password to review missions and compliance
+                                dashboards.</p>
+                            <form class="row g-3">
+                                <div class="col-12">
+                                    <label class="form-label" for="central-email">Official Email ID</label>
+                                    <input type="email" class="form-control" id="central-email"
+                                        placeholder="name@ministry.gov.in" required />
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label" for="central-password">Password</label>
+                                    <input type="password" class="form-control" id="central-password"
+                                        placeholder="Enter secure password" required />
+                                </div>
+                                <div class="col-12 form-text-links">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="central-remember" />
+                                        <label class="form-check-label" for="central-remember">Remember this
+                                            device</label>
+                                    </div>
+                                    <a href="#">Forgot password?</a>
+                                </div>
+                                <div class="col-12 d-grid gap-2">
+                                    <button type="submit" class="btn btn-brand">Proceed to Dashboard</button>
+                                    <button type="button" class="btn btn-outline">Need higher clearance? Request
+                                        verification</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="field" role="tabpanel" aria-labelledby="field-tab">
+                        <div class="login-card">
+                            <h3>Field Office Login</h3>
+                            <p>Access inspection assignments, field reports, and on-ground collaboration tools.</p>
+                            <form class="row g-3">
+                                <div class="col-12">
+                                    <label class="form-label" for="field-id">Office ID</label>
+                                    <input type="text" class="form-control" id="field-id" placeholder="FO-DEL-1023"
+                                        required />
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label" for="field-pin">Secure PIN</label>
+                                    <input type="password" class="form-control" id="field-pin"
+                                        placeholder="Enter secure PIN" required />
+                                </div>
+                                <div class="col-12 d-grid gap-2">
+                                    <button type="submit" class="btn btn-brand">Access Field Workspace</button>
+                                    <button type="button" class="btn btn-outline">Register a new field unit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="individuals" role="tabpanel" aria-labelledby="individuals-tab">
+                        <div class="login-card">
+                            <h3>Individuals</h3>
+                            <p>Continue your personal climate actions, pledge tracking, and learning journeys.</p>
+                            <form class="row g-3">
+                                <div class="col-12">
+                                    <label class="form-label" for="individual-identifier">Mobile Number / Email</label>
+                                    <input type="text" class="form-control" id="individual-identifier"
+                                        placeholder="Enter mobile number or email" required />
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label" for="individual-password">Password</label>
+                                    <input type="password" class="form-control" id="individual-password"
+                                        placeholder="Enter password" required />
+                                </div>
+                                <div class="col-12 form-text-links">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="individual-remember" />
+                                        <label class="form-check-label" for="individual-remember">Keep me signed
+                                            in</label>
+                                    </div>
+                                    <a href="#">Forgot password?</a>
+                                </div>
+                                <div class="col-12 d-grid gap-2">
+                                    <button type="submit" class="btn btn-brand">Log In Securely</button>
+                                    <button type="button" class="btn btn-outline">New to MeriLife? Create
+                                        account</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="stakeholders" role="tabpanel" aria-labelledby="stakeholders-tab">
+                        <div class="login-card">
+                            <h3>Other Stakeholders</h3>
+                            <p>NGOs, academia, and private partners can reach their joint programme space here.</p>
+                            <form class="row g-3">
+                                <div class="col-12">
+                                    <label class="form-label" for="stakeholder-email">Organisation Email</label>
+                                    <input type="email" class="form-control" id="stakeholder-email"
+                                        placeholder="team@organisation.org" required />
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label" for="stakeholder-password">Password</label>
+                                    <input type="password" class="form-control" id="stakeholder-password"
+                                        placeholder="Enter password" required />
+                                </div>
+                                <div class="col-12 d-grid gap-2">
+                                    <button type="submit" class="btn btn-brand">Open Partner Portal</button>
+                                    <button type="button" class="btn btn-outline">Apply for stakeholder access</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="international" role="tabpanel" aria-labelledby="international-tab">
+                        <div class="login-card">
+                            <h3>International Login</h3>
+                            <p>Collaborate on cross-border programmes, bilateral initiatives, and shared resources.</p>
+                            <form class="row g-3">
+                                <div class="col-12">
+                                    <label class="form-label" for="international-email">Registered Email</label>
+                                    <input type="email" class="form-control" id="international-email"
+                                        placeholder="firstname.lastname@agency.int" required />
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label" for="international-passcode">Passcode</label>
+                                    <input type="password" class="form-control" id="international-passcode"
+                                        placeholder="Enter passcode" required />
+                                </div>
+                                <div class="col-12 d-grid gap-2">
+                                    <button type="submit" class="btn btn-brand">Enter International Suite</button>
+                                    <button type="button" class="btn btn-outline">Contact global liaison desk</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="moefcc" role="tabpanel" aria-labelledby="moefcc-tab">
+                        <div class="login-card">
+                            <h3>MoEFCC User Login</h3>
+                            <p>Officers can administer national sustainability programmes and analytics dashboards.</p>
+                            <form class="row g-3">
+                                <div class="col-12">
+                                    <label class="form-label" for="moefcc-username">Username</label>
+                                    <input type="text" class="form-control" id="moefcc-username"
+                                        placeholder="Enter username" required />
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label" for="moefcc-password">Password</label>
+                                    <input type="password" class="form-control" id="moefcc-password"
+                                        placeholder="Enter password" required />
+                                </div>
+                                <div class="col-12 d-grid gap-2">
+                                    <button type="submit" class="btn btn-brand">Launch MoEFCC Console</button>
+                                    <button type="button" class="btn btn-outline">Restore access via admin desk</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-note">
+                    Need assistance? Write to <a href="mailto:support@merilife.gov.in">support@merilife.gov.in</a> or
+                    call the 24×7 helpline.
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

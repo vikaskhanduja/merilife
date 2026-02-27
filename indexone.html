@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ministry of Environment - Government of India</title>
+    <link rel="icon" type="image/png" href="images/fevicon.png">
+    <!-- Bootstrap 5.3 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/one.css" />
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Header structure matching screenshot -->
+    <div class="header-wrapper">
+        <!-- Top Header - Accessibility -->
+        <header class="top-header">
+            <div class="container-fluid px-4">
+                <div class="gov-brand">
+                    <div class="indian-flag">
+                        <!-- <img src="./images/Government-of-India-Logo.png" height="30" /> -->
+                    </div>
+                    <span>MINISTRY OF ENVIRONMENT - GOVERNMENT OF INDIA</span>
+                </div>
+                <div class="blink">
+                    <a href="#" aria-label="Skip to main content">#EkPedMaaKeNaam Video Conference Link (Monday to
+                        Friday, 10 AM – 11 AM)</a>
+                </div>
+                <div class="top-right-controls">
+                    <div class="language-selector">
+                        <button class="language-btn" aria-label="Select language">
+                            <i class="fas fa-globe"></i>
+                            English
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="language-dropdown">
+                            <div class="language-grid">
+                                <div class="language-option active one">English</div>
+                                <div class="language-option two">हिंदी<br>Hindi</div>
+                                <div class="language-option three">অসমীয়া<br>Assamese</div>
+                                <div class="language-option four">বাংলা<br>Bengali</div>
+                                <div class="language-option five">ગુજરાતી<br>Gujarati</div>
+                                <div class="language-option six">ಕನ್ನಡ<br>Kannada</div>
+                                <div class="language-option seven">മലയാളം<br>Malayalam</div>
+                                <div class="language-option eight">मराठी<br>Marathi</div>
+                                <div class="language-option nine">ଓଡ଼ିଆ<br>Odia</div>
+                                <div class="language-option ten">ਪੰਜਾਬੀ<br>Punjabi</div>
+                                <div class="language-option eleven">தமிழ்<br>Tamil</div>
+                                <div class="language-option twelve">తెలుగు<br>Telugu</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="accessibility-icons">
+                        <button class="icon-btn" aria-label="Accessibility options">
+                            <i class="fas fa-universal-access"></i>Login
+                        </button>
+                        <button class="icon-btn" aria-label="User account">
+                            <i class="fas fa-user"></i>Admin
+                        </button>
+                    </div> -->
+                </div>
+            </div>
+        </header>
+
+        <!-- Middle Header - Logo and Brand -->
+        <header class="middle-header">
+            <div class="container-fluid px-4">
+                <div class="logo">
+                    <div class="emblem">
+                        <img src="./images/nature-protects-logo.png" />
+                        <img src="./images/Life-logo.jpg" />
+                    </div>
+                    <div class="brand-text">
+                        <div class="brand-title">Ministry of Environment</div>
+                        <div class="brand-subtitle">Forest & Climate Change • Government of India</div>
+                    </div>
+                    <div class="right">
+                        <img src="./images/unicef-logos.png" height="60" />
+                        <img src="./images/yuwaah-logos.png" height="60" />
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Bottom Header - Navigation -->
+        <header class="bottom-header">
+            <div class="container-fluid px-4">
+                <button class="hamburger" onclick="openSidebar()">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <nav class="d-flex align-items-center w-100 justify-content-between">
+                    <ul class="main-nav">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                About Us
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                Gallery
+                                <i class="fas fa-chevron-down dropdown-icon"></i>
+                            </a>
+                            <div class="dropdown">
+                                <a href="#"> Photo Gallery</a>
+                                <a href="#"> Video Gallery</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                Public Information
+                                <i class="fas fa-chevron-down dropdown-icon"></i>
+                            </a>
+                            <div class="dropdown">
+                                <a href="#">Download PDF's</a>
+                                <a href="#">Download PDF's</a>
+                                <a href="#">Download PDF's</a>
+                                <a href="#">Download PDF's</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                Help
+                                <i class="fas fa-chevron-down dropdown-icon"></i>
+                            </a>
+                            <div class="dropdown">
+                                <a href="#">Raise a Grievance</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                Campaign Resources
+                                <i class="fas fa-chevron-down dropdown-icon"></i>
+                            </a>
+                            <div class="dropdown">
+                                <a href="#">Wed 2025</a>
+                                <a href="#">Mission Life Creatives</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                Contact Us
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="accessibility-icons">
+                        <a href="loginone.html" class="icon-btn" aria-label="Accessibility options">
+                            <i class="fas fa-universal-access"></i>Login
+                        </a>
+                        <button class="icon-btn" aria-label="User account">
+                            <i class="fas fa-user"></i>Admin
+                        </button>
+                    </div>
+                </nav>
+            </div>
+        </header>
+    </div>
+    <!----------------------------------------->
+
+    <!-- Hero slider with environment images -->
+    <section class="hero-slider">
+        <div class="container-fluid px-0 mt-1">
+            <div class="row">
+                <!-- Left Side (Slider) -->
+                <div class="col-md-8 px-0">
+                    <div id="mainSlider" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="./images/banner-one.png" class="slider-img d-block w-100" alt="Slide 1" />
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./images/banner-two.png" class="slider-img d-block w-100" alt="Slide 2" />
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./images/banner-one.png" class="slider-img d-block w-100 " alt="Slide 3" />
+                            </div>
+                        </div>
+                        <!-- Controls -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#mainSlider"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#mainSlider"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Side (Feature Boxes) -->
+                <div class="col-md-4 d-flex flex-column justify-content-center right-section">
+                    <div class="row g-3 p-2">
+                        <div class="news-section">
+                            <div class="news-header">
+                                <h2 class="news-title"><i class="far fa-newspaper"></i> News & Events</h2>
+                            </div>
+                            <div class="news-container">
+                                <div class="news-items auto-scroll" id="newsItems">
+                                    <!-- News Item 1 -->
+                                    <div class="news-item">
+                                        <div class="news-date">
+                                            <i class="far fa-calendar-alt"></i> July 15, 2023 | <i
+                                                class="far fa-clock"></i>
+                                            10:30 AM
+                                        </div>
+                                        <p class="news-content">Company announces breakthrough in sustainable energy
+                                            solutions
+                                            with new solar panel technology.</p>
+                                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                                    </div>
+
+                                    <!-- News Item 2 -->
+                                    <div class="news-item">
+                                        <div class="news-date">
+                                            <i class="far fa-calendar-alt"></i> July 12, 2023 | <i
+                                                class="far fa-clock"></i>
+                                            2:15 PM
+                                        </div>
+                                        <p class="news-content">Annual shareholders meeting scheduled for August 5th
+                                            with
+                                            exciting announcements planned.</p>
+                                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                                    </div>
+
+                                    <!-- News Item 3 -->
+                                    <div class="news-item">
+                                        <div class="news-date">
+                                            <i class="far fa-calendar-alt"></i> July 8, 2023 | <i
+                                                class="far fa-clock"></i>
+                                            9:00
+                                            AM
+                                        </div>
+                                        <p class="news-content">Our team wins prestigious industry award for innovation
+                                            in
+                                            customer service solutions.</p>
+                                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                                    </div>
+
+                                    <!-- News Item 4 -->
+                                    <div class="news-item">
+                                        <div class="news-date">
+                                            <i class="far fa-calendar-alt"></i> July 3, 2023 | <i
+                                                class="far fa-clock"></i>
+                                            4:45
+                                            PM
+                                        </div>
+                                        <p class="news-content">New partnership established with leading tech firm to
+                                            develop
+                                            AI-driven analytics platform.</p>
+                                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                                    </div>
+
+                                    <!-- News Item 5 -->
+                                    <div class="news-item">
+                                        <div class="news-date">
+                                            <i class="far fa-calendar-alt"></i> June 28, 2023 | <i
+                                                class="far fa-clock"></i>
+                                            11:20 AM
+                                        </div>
+                                        <p class="news-content">Community outreach program launches in three new cities,
+                                            expanding our social impact.</p>
+                                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                                    </div>
+
+                                    <!-- News Item 6 -->
+                                    <div class="news-item">
+                                        <div class="news-date">
+                                            <i class="far fa-calendar-alt"></i> June 22, 2023 | <i
+                                                class="far fa-clock"></i>
+                                            3:00 PM
+                                        </div>
+                                        <p class="news-content">Quarterly financial results show strong growth across
+                                            all
+                                            business sectors.</p>
+                                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!---------------------------------------->
+
+    <!---------Promte Image-slider------------>
+    <section class="Promote-mission">
+        <div class="container">
+            <div class="slider-container">
+                <div class="heading-design">
+                    <h1>Promote Mission LiFE Themes</h1>
+                </div>
+                <div class="slider-track">
+                    <!-- Original Image Set -->
+                    <div class="custom-tab" style="background: #ede7f6; border: 1px solid #ede7f6;"><img
+                            src="./images/Save-energy.png" /></div>
+                    <div class="custom-tab" style="background: #fbe9e7; border: 1px solid #ede7f6;"><img
+                            src="./images/Save-Water.png" /></div>
+                    <div class="custom-tab" style="background: #ede7f6; border: 1px solid #ede7f6;"><img
+                            src="./images/Say-no-to-SUP.png" /></div>
+                    <div class="custom-tab" style="background: #eceff1; border: 1px solid #eceff1;"><img
+                            src="./images/Adapt-Sustainable-life-styles.png" /></div>
+                    <div class="custom-tab" style="background: #fff8e1; border: 1px solid #fff8e1;"><img
+                            src="./images/Reduce-Waste.png" /></div>
+                    <div class="custom-tab" style="background: #e0f7fa; border: 1px solid #e0f7fa;"><img
+                            src="./images/Adopt-Healthy-lifestyle.png" />
+                    </div>
+                    <div class="custom-tab" style="background: #E8F5E9; border: 1px solid #E8F5E9;"><img
+                            src="./images/Reduce-E-waste.png" /></div>
+
+                    <!-- Duplicate Set for Infinite Loop -->
+                    <div class="custom-tab" style="background: #ede7f6; border: 1px solid #ede7f6;"><img
+                            src="./images/Save-energy.png" /></div>
+                    <div class="custom-tab" style="background: #fbe9e7; border: 1px solid #fbe9e7;"><img
+                            src="./images/Save-Water.png" /></div>
+                    <div class="custom-tab" style="background: #eceff1; border: 1px solid #eceff1;"><img
+                            src="./images/Say-no-to-SUP.png" /></div>
+                    <div class="custom-tab" style="background: #e3f2fd; border: 1px solid #e3f2fd;"><img
+                            src="./images/Adapt-Sustainable-life-styles.png" /></div>
+                    <div class="custom-tab" style="background: #fff8e1; border: 1px solid #fff8e1;"><img
+                            src="./images/Reduce-Waste.png" /></div>
+                    <div class="custom-tab" style="background: #e0f7fa; border: 1px solid #e0f7fa;"><img
+                            src="./images/Adopt-Healthy-lifestyle.png" />
+                    </div>
+                    <div class="custom-tab" style="background: #E8F5E9; border: 1px solid #E8F5E9;"><img
+                            src="./images/Reduce-E-waste.png" /></div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!---------------------------------------->
+
+    <!---------------abouts-us---------------->
+
+    <section class="py-5 position-relative overflow-hidden about-us">
+        <!-- Animated Leaves -->
+        <div class="leaf leaf1">🍃</div>
+        <div class="leaf leaf2">🍂</div>
+        <div class="leaf leaf3">🌿</div>
+        <div class="leaf leaf4">🍁</div>
+        <div class="leaf leaf5">🍃</div>
+        <div class="leaf leaf6">🍂</div>
+        <div class="leaf leaf7">🌿</div>
+        <div class="leaf leaf8">🍁</div>
+
+        <div class="container">
+            <div class="row text-center g-4">
+                <!-- About Us -->
+                <div class="col-md-4">
+                    <div class="p-4 h-100 shadow-sm rounded bg-white hover-box">
+                        <h4 class="fw-bold mb-3">About Us</h4>
+                        <p class="text-muted">
+                            We are committed to protecting nature, preserving biodiversity,
+                            and promoting sustainable practices for a greener<br> future.
+                        </p>
+                        <a href="#" class="env-btn">
+                            <i class="fas fa-leaf"></i> Know More
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Our Mission -->
+                <div class="col-md-4">
+                    <div class="p-4 h-100 shadow-sm rounded bg-white hover-box">
+                        <h4 class="fw-bold mb-3">Our Mission</h4>
+                        <p class="text-muted">
+                            To create awareness, encourage eco-friendly lifestyles,
+                            and ensure active participation in environmental conservation.
+                        </p>
+                        <a href="#" class="env-btn">
+                            <i class="fas fa-leaf"></i> Know More
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Our Objective -->
+                <div class="col-md-4">
+                    <div class="p-4 h-100 shadow-sm rounded bg-white hover-box">
+                        <h4 class="fw-bold mb-3">Our Objective</h4>
+                        <p class="text-muted">
+                            To safeguard natural resources, promote sustainable development,
+                            and foster harmony between people and the environment.
+                        </p>
+                        <a href="#" class="env-btn">
+                            <i class="fas fa-leaf"></i> Know More
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!---------------------------------------------->
+
+    <!---------------stats-------------------->
+
+    <section class="counter">
+        <div class="container">
+            <div class="heading-design">
+                <h1>Stakeholders Involved</h1>
+            </div>
+            <div class="row mt-4 justify-content-center">
+                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="row">
+                        <div class="inner-heading text-center mb-3">
+                            <h4>Central Government</h4>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="counter-box orange">
+                                <div class="inner">
+                                    <h2>107</h2>
+                                    <p class="text-orange">Ministries</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="counter-box blue">
+                                <div class="inner">
+                                    <h2>945</h2>
+                                    <p class="text-blue">Institutions</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="counter-box red">
+                                <div class="inner">
+                                    <h2>3,225</h2>
+                                    <p class="text-red">Field Offices</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="row">
+                        <div class="inner-heading text-center mb-3">
+                            <h4>State Government</h4>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="counter-box orange">
+                                <div class="inner">
+                                    <h2>36</h2>
+                                    <p class="text-orange">State/UTs</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="counter-box blue">
+                                <div class="inner">
+
+                                    <h2>399</h2>
+                                    <p class="text-blue">Departments</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="counter-box red">
+                                <div class="inner">
+
+                                    <h2>43,836</h2>
+                                    <p class="text-red">Field Offices</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--------------------------------------->
+
+    <!--------------gallery-section----------->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="heading-design">
+                <h1>Promote Mission LiFE Themes</h1>
+            </div>
+            <div class="row">
+                <!-- Photo Section -->
+                <div class="col-md-4">
+                    <div class="gallery-item">
+                        <img src="./images/gallery-one.png" alt="Nature Photo" class="gallery-img">
+                        <div class="gallery-caption">
+                            <i class="fas fa-camera"></i>
+                            <h3>Photo Section</h3>
+                        </div>
+                        <a href="photo-page.html" class="gallery-link" target="_blank"></a>
+                    </div>
+                </div>
+
+                <!-- Video Section -->
+                <div class="col-md-4">
+                    <div class="gallery-item">
+                        <img src="./images/gallery-two.png" alt="Video Production" class="gallery-img">
+                        <div class="gallery-caption">
+                            <i class="fas fa-video"></i>
+                            <h3>Video Section</h3>
+                        </div>
+                        <a href="video-page.html" class="gallery-link" target="_blank"></a>
+                    </div>
+                </div>
+
+                <!-- Social Feed -->
+                <div class="col-md-4">
+                    <div class="gallery-item">
+                        <img src="./images/gallery-three.png" alt="Social Media" class="gallery-img">
+                        <div class="gallery-caption">
+                            <i class="fas fa-share-alt"></i>
+                            <h3>Social Feed</h3>
+                        </div>
+                        <a href="social-page.html" class="gallery-link" target="_blank"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--------------------------------------->
+
+    <!-- Footer Section -->
+    <footer class="footer-section text-white">
+        <div class="container">
+
+            <!-- Top Section: Logo + Contact Info -->
+            <div class="row align-items-center" style="position: relative;top: -50px;">
+                <!-- Logo -->
+                <div class="col-md-3 text-center text-md-start mb-3 mb-md-0">
+                    <img src="images/Life-logo.png" alt="Logo" class="img-fluid bg-light p-3 rounded"
+                        style="max-width: 200px;">
+                </div>
+
+                <!-- Contact Info -->
+                <div class="col-md-9">
+                    <div
+                        class="d-flex flex-column flex-md-row bg-light rounded p-3 shadow-sm text-dark justify-content-around">
+                        <!-- Address -->
+                        <div class="d-flex align-items-center mb-3 mb-md-0">
+                            <i class="bi bi-geo-alt-fill text-success fs-4 me-2"></i>
+                            <p class="mb-0">Indira Paryavaran Bhawan<br>
+                                Jor Bagh Road, Aliganj<br>
+                                New Delhi - 110003
+                                India</p>
+                        </div>
+                        <div class="vr d-none d-md-block"></div>
+
+                        <!-- Phone -->
+                        <div class="d-flex align-items-center mb-3 mb-md-0 px-md-4">
+                            <i class="bi bi-telephone-fill text-success fs-4 me-2"></i>
+                            <p class="mb-0">+91-11-2436-0721</p>
+                        </div>
+                        <div class="vr d-none d-md-block"></div>
+
+                        <!-- Email -->
+                        <div class="d-flex align-items-center px-md-4">
+                            <i class="bi bi-envelope-fill text-success fs-4 me-2"></i>
+                            <p class="mb-0">secy-moef@nic.in</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Section: Links + Info -->
+            <div class="row text-center text-md-start">
+                <!-- About Us -->
+                <div class="col-md-4">
+                    <h5 class="fw-bold">About MeriLiFE</h5>
+                    <iframe width="100%" height="200" class="ramp-video rounded"
+                        src="https://www.youtube.com/embed/xe9bV7I3pQs?si=Bkss9wV4qxjCF2Ci" title="Ramp Video"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+
+                <!-- Recent Post -->
+                <div class="col-md-4">
+                    <h5 class="fw-bold">Our Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white text-decoration-none">About Us</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Terms and Conditions</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Submit a Grievance</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="col-lg-4 col-md-12">
+                    <h5><i class="fas fa-mobile-alt me-2"></i>Download Our Apps</h5>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="qr-code">
+                                <div>
+                                    <img src="./images/SSG_2025_QR_Code.png" height="100" width="100" />
+                                </div>
+                            </div>
+                            <p class="text-center"><small>Environment India<br>Android App</small></p>
+                        </div>
+                        <div class="col-6">
+                            <div class="qr-code">
+                                <div>
+                                    <img src="./images/SSG_2025_Logo.png" height="100" width="100" />
+                                </div>
+                            </div>
+                            <p class="text-center"><small>Environment India<br>iOS App</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="text-center py-3 mt-4" style="background-color: #064e2e;">
+            <p class="mb-0">&copy; 2025 Ministry of Environment, Forest & Climate Change, Government of India. All
+                rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!----------fixed-section------------->
+
+    <div class="fixed-ticker">
+        <div class="ticker-item">
+            <span>#EkPedMaaKeNaam 2024</span>
+            <i class="fas fa-tree"></i>
+        </div>
+        <div class="ticker-item">
+            <span>#EkPedMaaKeNaam 2025</span>
+            <i class="fas fa-tree"></i>
+        </div>
+        <div class="ticker-item">
+            <span>World Environment Day</span>
+            <i class="fas fa-leaf"></i>
+        </div>
+    </div>
+
+    <!---------social media icon---------->
+    <div class="horizontal-menu" id="menu">
+        <div class="menu-toggle" id="menu-toggle">+</div>
+        <div class="menu-items">
+            <div class="menu-item"><a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            </div>
+            <div class="menu-item"><a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="menu-item"><a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="menu-item"><a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+            <div class="menu-item"><a href="https://wa.me/" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <div class="menu-item"><a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+    <!---------------------------------->
+
+    <!-- Back to Top Button -->
+    <div class="top" id="backToTop">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 16" fill="currentColor">
+            <path
+                d="M7.5 13.022V14.5a.5.5 0 0 0 1 0v-1.478a4.886 4.886 0 0 0 2.775-8.486l-2.437-2.2a1.25 1.25 0 0 0-1.676 0l-2.437 2.2A4.886 4.886 0 0 0 7.5 13.022Zm3.105-7.744A3.886 3.886 0 0 1 8.5 12.015V7.501a.5.5 0 0 0-1 0v4.514a3.886 3.886 0 0 1-2.105-6.737l2.437-2.2a.25.25 0 0 1 .336 0l2.437 2.2Z" />
+        </svg>
+    </div>
+
+
+
+
+    <!-- Bootstrap JS and Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Mobile sidebar functions
+        function openSidebar() {
+            document.getElementById('mobileSidebar').classList.add('open');
+            document.getElementById('sidebarOverlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeSidebar() {
+            document.getElementById('mobileSidebar').classList.remove('open');
+            document.getElementById('sidebarOverlay').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        //social media icon
+        const toggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('menu');
+
+        toggle.addEventListener('click', () => {
+            menu.classList.toggle('active');
+            toggle.textContent = menu.classList.contains('active') ? '×' : '+';
+        });
+
+
+        //scroll up
+        const backToTop = document.getElementById("backToTop");
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 200) {
+                backToTop.classList.add("show");
+            } else {
+                backToTop.classList.remove("show");
+            }
+        });
+
+        backToTop.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
+</body>
+
+</html>
